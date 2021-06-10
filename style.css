@@ -5,7 +5,6 @@
 .container {
   display: flex;
   justify-content: center;
-  /* background-color: black; */
 
   padding-top: 15px;
   padding-bottom: 10px;
@@ -16,7 +15,6 @@
 .sidebar {
   height: 100vh;
   width: 20vw;
-  /* background-color: red; */
   max-height: 100vh;
 }
 
@@ -38,7 +36,6 @@
 }
 
 .sidebar-image {
-  /* display: inline-block; */
   width: 40px;
   height: 50px;
 }
@@ -66,7 +63,7 @@
 
 .selected {
   color: white;
-  background: blue;
+  background: #1288e3;
 }
 
 .content-title {
