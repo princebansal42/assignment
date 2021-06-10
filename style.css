@@ -6,12 +6,14 @@
   display: flex;
   justify-content: center;
   /* background-color: black; */
+  padding-top: 20px;
+  padding-bottom: 20px;
   height: 100vh;
 }
 
 .sidebar {
   height: 100vh;
-  width: 15vw;
+  width: 20vw;
   /* background-color: red; */
   max-height: 100vh;
 }
@@ -39,7 +41,7 @@
   height: 50px;
 }
 .sidebar-description {
-  width: 150px;
+  width: 200px;
 }
 .sidebar-item {
   border: 1px solid white;
@@ -68,4 +70,5 @@
 .content-title {
   font-size: 30px;
   height: 100px;
+  color: grey;
 }
