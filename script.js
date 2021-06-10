@@ -15,3 +15,11 @@ listItemNodes.forEach((listItemNode) => {
     }
   });
 });
+
+window.addEventListener("keydown", function (event) {
+  if (event.code === "ArrowDown") {
+    console.log("DOWN");
+  } else if (event.code === "ArrowUp") {
+    console.log("UP");
+  }
+});

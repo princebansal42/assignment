@@ -6,9 +6,11 @@
   display: flex;
   justify-content: center;
   /* background-color: black; */
-  padding-top: 20px;
-  padding-bottom: 20px;
+
+  padding-top: 15px;
+  padding-bottom: 10px;
   height: 100vh;
+  max-height: 100vh;
 }
 
 .sidebar {
@@ -58,7 +60,7 @@
   padding: 10px;
 }
 .content-image {
-  height: 95%;
+  height: 93%;
   width: 100%;
 }
 
