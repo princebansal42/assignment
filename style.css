@@ -19,7 +19,6 @@
 .content {
   height: 100vh;
   width: 34vw;
-  background-color: blue;
   max-height: 100vh;
 }
 
@@ -32,7 +31,6 @@
   align-items: center;
   padding: 10px;
   justify-content: space-evenly;
-  background-color: blue;
 }
 
 .sidebar-image {
@@ -64,7 +62,7 @@
 
 .selected {
   color: white;
-  background: yellow;
+  background: blue;
 }
 
 .content-title {
