@@ -42,7 +42,6 @@ function createListElement(item, index) {
   imageElement.setAttribute("src", previewImage);
   const divElement = document.createElement("div");
   divElement.classList.add("sidebar-description");
-  divElement.classList.add("ellipses");
   divElement.innerText = formatTitle(title);
   listElement.appendChild(imageElement);
   listElement.appendChild(divElement);
