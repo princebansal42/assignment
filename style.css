@@ -36,10 +36,12 @@
 .sidebar-item {
   display: flex;
   align-items: center;
-  padding: 5px;
   border: 1px solid white;
   margin-right: 10px;
+
   border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   justify-content: space-evenly;
 }
 
