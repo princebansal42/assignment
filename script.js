@@ -26,16 +26,24 @@ const data = [
   },
 ];
 
+function formatTitle(title) {
+  if (title.length < 24) return title;
+  let collapsedTitle =
+    title.substr(0, 10) + "..." + title.substr(title.length - 10, 10);
+  return collapsedTitle;
+}
 function createListElement(item, index) {
+  const { previewImage, title } = item;
   const listElement = document.createElement("li");
   listElement.classList.add("sidebar-item");
   listElement.setAttribute("data-index", index);
   const imageElement = document.createElement("img");
   imageElement.classList.add("sidebar-image");
-  imageElement.setAttribute("src", item.previewImage);
+  imageElement.setAttribute("src", previewImage);
   const divElement = document.createElement("div");
   divElement.classList.add("sidebar-description");
-  divElement.innerText = item.title;
+  divElement.classList.add("ellipses");
+  divElement.innerText = formatTitle(title);
   listElement.appendChild(imageElement);
   listElement.appendChild(divElement);
   return listElement;
