@@ -26,12 +26,28 @@ const data = [
   },
 ];
 
-function formatTitle(title) {
-  if (title.length < 24) return title;
-  let collapsedTitle =
-    title.substr(0, 10) + "..." + title.substr(title.length - 10, 10);
-  return collapsedTitle;
+function resizeTitles() {
+  let listDescriptionNodes = document.querySelectorAll(".sidebar-description");
+  for (let i = 0; i < listDescriptionNodes.length; i++) {
+    listDescriptionNodes[i].innerText = data[i].title;
+    let totalWidth = listDescriptionNodes[i].scrollWidth;
+    let availableWidth = listDescriptionNodes[i].clientWidth;
+    if (totalWidth <= availableWidth) continue;
+
+    let description = data[i].title;
+    let charWidthRatio = parseInt(totalWidth / description.length);
+
+    let allowedLength = parseInt(availableWidth / charWidthRatio);
+    let difference = allowedLength - 3;
+    if (description.length - allowedLength < 3) difference -= 3;
+    let halfLength = parseInt(difference / 2) - 2;
+    listDescriptionNodes[i].innerText =
+      description.substr(0, halfLength) +
+      "..." +
+      description.substr(description.length - halfLength, halfLength);
+  }
 }
+window.addEventListener("resize", resizeTitles);
 function createListElement(item, index) {
   const { previewImage, title } = item;
   const listElement = document.createElement("li");
@@ -42,7 +58,7 @@ function createListElement(item, index) {
   imageElement.setAttribute("src", previewImage);
   const divElement = document.createElement("div");
   divElement.classList.add("sidebar-description");
-  divElement.innerText = formatTitle(title);
+  divElement.innerText = title;
   listElement.appendChild(imageElement);
   listElement.appendChild(divElement);
   return listElement;
@@ -54,6 +70,7 @@ function setup() {
     listNode.appendChild(listElement);
   });
   changeState(0);
+  resizeTitles();
 }
 
 function removeSelected() {
